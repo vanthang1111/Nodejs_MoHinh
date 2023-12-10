@@ -2,7 +2,7 @@ import express from 'express';
 import asyncHandler from "express-async-handler";
 import User from '../Models/UserModel.js';
 import generateToken from '../utils/generateToken.js';
-import protect from '../Middleware/AuthMiddleware.js';
+import  {protect, admin } from '../Middleware/AuthMiddleware.js';
 import { Error } from 'mongoose';
 
 const userRouter = express.Router()
@@ -109,5 +109,12 @@ userRouter.get(
       }
     })
   );
+
+
+  // get all user adm
+  userRouter.get("/",protect,admin,asyncHandler(async (req,res)=>{
+    const users = await User.find({});
+    res.json(users);
+  }));
 export default userRouter;
 

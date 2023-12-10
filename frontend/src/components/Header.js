@@ -28,6 +28,8 @@ if(keyword.trim()){
   return (
     <div>
       {/* Top Header */}
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4891717272585585"
+     crossorigin="anonymous"></script>
       <div className="Announcement ">
         <div className="container">
           <div className="row">
